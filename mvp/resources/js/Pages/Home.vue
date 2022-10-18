@@ -4,9 +4,9 @@ import { Link } from '@inertiajs/inertia-vue3'
 
 <template>
     <div>
-        <h1>osklfgajhlgkdf</h1>
+        <h1>Hommeee</h1>
 
-        <Link href="/">Home</Link>
+        <Link href="/hello">Naar Hello</Link>
     </div>
 </template>
 
