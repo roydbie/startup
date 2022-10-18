@@ -1,21 +1,26 @@
 # Laravel / Inertia / Vue setup
 
-First, I installed Laravel the way you'd normally install Laravel. I personally use composer for the installation, but it can be done in various ways. 
-Check out: https://laravel.com/docs/9.x/installation. At the time of creating this repository, Laravel 9.x was the latest version.
+After you have installed PHP and Composer, you may create a new Laravel project via the Composer create-project command:
 
 ```bash
 composer create-project laravel/laravel mvp
 ```
 
-Afterwards I created a MySQL database and added the credentials to the .env file.
+Check out: https://laravel.com/docs/9.x/installation. At the time of creating this repository, Laravel 9.x was the latest version.
 
-The step that followed was to install Inertia to both the server-side as the client-side.
+Afterwards I created a MySQL database and added the credential to the .env file.
+
+```
+DB_DATABASE=startup
+```
+
+The documentation for installing Inertia to both the server-side and the client-side can be found here:
 
 Server-side documentation: https://inertiajs.com/server-side-setup
 
 Client-side documentation: https://inertiajs.com/client-side-setup
 
-Install Inertia.js for Laravel:
+Install the Inertia server-side adapters using the preferred package manager for Laravel:
 
 ```bash
 composer require inertiajs/inertia-laravel
