@@ -2,9 +2,15 @@
     <div>
         <Layout>
             <Head>
-                <title>Visueel</title>
+                <title>Werkorders</title>
             </Head>
-            <h1>Visueel</h1>
+            <h1 class="page-heading">Workorders</h1>
+
+            <p><b>What do i need on this page?</b></p>
+            <p>
+                - All workorders to put into a table <br>
+
+            </p>
         </Layout>
     </div>
 </template>

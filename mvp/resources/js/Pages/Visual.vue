@@ -2,14 +2,15 @@
     <div>
         <Layout>
             <Head>
-                <title>Planning</title>
+                <title>Visueel</title>
             </Head>
-            <h1 class="page-heading">Planning</h1>
+            <h1 class="page-heading">Visual map</h1>
 
             <p><b>What do i need on this page?</b></p>
             <p>
-                - All workorders with a "date_planning" and "date_time" to put into a calendar <br>
-                - The rest of the workorders should be on the side in a list and you should be able to give them a "date_planning" and "date_time"
+                - The locations from the database "that the user set up" (hard coded for now) <br>
+                - All workorders with a certain status <br>
+                - The current location of these workorders
 
             </p>
         </Layout>
@@ -25,7 +26,7 @@ export default {
     components: {
         Layout,
         Link,
-        Head
+        Head,
     },
 }
 </script>
