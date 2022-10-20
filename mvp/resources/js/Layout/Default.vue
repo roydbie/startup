@@ -23,10 +23,6 @@ export default {
 
 <style>
 
-main {
-    font-family: 'Raleway', sans-serif;
-}
-
 .header {
     background-color: whitesmoke;
 }
