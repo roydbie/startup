@@ -6,17 +6,20 @@
             </Head>
 
             <div class="button-switch-div">
-                <button class="button-switch" style="border-radius: 1rem 0 0 1rem;border-right:none;">Invoice</button>
-                <button class="button-switch">Add billing items</button>
-                <button class="button-switch" style="border-radius: 0 1rem 1rem 0;border-left:none;">Add annotations</button>
+                <button @click="currentView = 'invoice'" :class="[currentView === 'invoice' ? activeClass : '']"
+                        class="button-switch" style="border-radius: 1rem 0 0 1rem;border-right:none;">Invoice</button>
+                <button @click="currentView = 'invoice+billing'" :class="[currentView === 'invoice+billing' ? activeClass : '']"
+                        class="button-switch">Add billing items</button>
+                <button @click="currentView = 'invoice+annotations'" :class="[currentView === 'invoice+annotations' ? activeClass : '']"
+                        class="button-switch" style="border-radius: 0 1rem 1rem 0;border-left:none;">Add annotations</button>
             </div>
 
 
-            <div class="column" style="width:60%;margin-left:20%;margin-right:20%;">
+            <div v-if="currentView === 'invoice'" class="column" style="width:60%;margin-left:20%;margin-right:20%;">
                 <h2 class="ml2rem">Workorder {{ id }}</h2>
             </div>
 
-            <div>
+            <div v-if="currentView === 'invoice+billing'">
                 <div class="column" style="width:45%;margin-left:5%;margin-right:5%;">
                     <h2 class="ml2rem">Workorder {{ id }}</h2>
                 </div>
@@ -25,7 +28,7 @@
                 </div>
             </div>
 
-            <div>
+            <div v-if="currentView === 'invoice+annotations'">
                 <div class="column" style="width:45%;margin-left:5%;margin-right:5%;">
                     <h2 class="ml2rem">Workorder {{ id }}</h2>
                 </div>
@@ -46,6 +49,12 @@ import Layout from '../../Layout/Default.vue'
 
 
 export default {
+    data(){
+        return {
+            currentView: 'invoice',
+            activeClass: 'active',
+        }
+    },
     components: {
         Layout,
         Link,
@@ -58,6 +67,10 @@ export default {
 </script>
 
 <style scoped>
+
+h2 {
+    color: white;
+}
 
 .ml2rem {
     margin-left:2rem;
@@ -83,5 +96,10 @@ export default {
     font-weight: 700;
     color: black;
     cursor:pointer;
+}
+
+.active {
+    background-color: #34eb74;
+    color: white;
 }
 </style>
