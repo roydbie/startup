@@ -8,9 +8,12 @@ Route::get('/', function () {
 });
 
 Route::get('/workorders', function () {
-    return Inertia::render('Workorders');
+    return Inertia::render('Workorders/All');
 });
 
+Route::get('/workorders/{id}', function ($id) {
+    return Inertia::render('Workorders/Show', ['id' => $id]);
+});
 
 Route::get('/planning', function () {
     return Inertia::render('Planning');

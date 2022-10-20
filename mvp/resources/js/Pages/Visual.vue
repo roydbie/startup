@@ -2,7 +2,7 @@
     <div>
         <Layout>
             <Head>
-                <title>Visueel</title>
+                <title>Visual map</title>
             </Head>
             <h1 class="page-heading">Visual map</h1>
 

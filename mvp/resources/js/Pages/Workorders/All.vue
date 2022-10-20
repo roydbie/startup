@@ -2,14 +2,14 @@
     <div>
         <Layout>
             <Head>
-                <title>Werkorders</title>
+                <title>Workorders</title>
             </Head>
             <h1 class="page-heading">Workorders</h1>
 
             <p><b>What do i need on this page?</b></p>
             <p>
                 - All workorders to put into a table <br>
-
+                Allemaal
             </p>
         </Layout>
     </div>
@@ -17,7 +17,7 @@
 
 <script>
 import { Link, Head } from '@inertiajs/inertia-vue3'
-import Layout from '../Layout/Default.vue'
+import Layout from '../../Layout/Default.vue'
 
 
 export default {
