@@ -1,8 +1,8 @@
 <template>
     <main>
         <header class="header">
-            <Link href="/" class="topnav-link" style="margin-left:3rem!important;">Visual map</Link>
-            <Link href="/workorders" class="topnav-link">Workorders</Link>
+            <Link href="/" class="topnav-link" style="margin-left:3rem!important;">Visuele weergave</Link>
+            <Link href="/werkorders" class="topnav-link">Werkorders</Link>
             <Link href="/planning" class="topnav-link">Planning</Link>
         </header>
         <article>
@@ -21,7 +21,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 
 .header {
     background-color: whitesmoke;

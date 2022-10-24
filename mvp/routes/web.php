@@ -4,15 +4,15 @@ use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 
 Route::get('/', function () {
-    return Inertia::render('Visual');
+    return Inertia::render('Visueel');
 });
 
-Route::get('/workorders', function () {
-    return Inertia::render('Workorders/All');
+Route::get('/werkorders', function () {
+    return Inertia::render('Werkorders/Alles');
 });
 
-Route::get('/workorders/{id}', function ($id) {
-    return Inertia::render('Workorders/Show', ['id' => $id]);
+Route::get('/werkorders/{id}', function ($id) {
+    return Inertia::render('Werkorders/Details', ['id' => $id]);
 });
 
 Route::get('/planning', function () {

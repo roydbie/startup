@@ -2,14 +2,16 @@
     <div>
         <Layout>
             <Head>
-                <title>Workorders</title>
+                <title>Visuele weerave</title>
             </Head>
-            <h1 class="page-heading">Workorders</h1>
+            <h1 class="page-heading">Visuele weergave</h1>
 
             <p><b>What do i need on this page?</b></p>
             <p>
-                - All workorders to put into a table <br>
-                Allemaal
+                - The locations from the database "that the user set up" (hard coded for now) <br>
+                - All workorders with a certain status <br>
+                - The current location of these workorders
+
             </p>
         </Layout>
     </div>
@@ -17,7 +19,7 @@
 
 <script>
 import { Link, Head } from '@inertiajs/inertia-vue3'
-import Layout from '../../Layout/Default.vue'
+import Layout from '../Layout/Default.vue'
 
 
 export default {

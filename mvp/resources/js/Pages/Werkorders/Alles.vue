@@ -2,24 +2,24 @@
     <div>
         <Layout>
             <Head>
-                <title>Visual map</title>
+                <title>Werkorders</title>
             </Head>
-            <h1 class="page-heading">Visual map</h1>
+            <h1 class="page-heading">Werkorders</h1>
 
             <p><b>What do i need on this page?</b></p>
             <p>
-                - The locations from the database "that the user set up" (hard coded for now) <br>
-                - All workorders with a certain status <br>
-                - The current location of these workorders
-
+                - All workorders to put into a table <br>
+                Allemaal
             </p>
+
+            <Link href="/werkorders/980" class="topnav-link">Naar werkorders details</Link>
         </Layout>
     </div>
 </template>
 
 <script>
 import { Link, Head } from '@inertiajs/inertia-vue3'
-import Layout from '../Layout/Default.vue'
+import Layout from '../../Layout/Default.vue'
 
 
 export default {
