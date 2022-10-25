@@ -1,7 +1,7 @@
 <template>
     <div>
         <h2 class="mx-5 mt-4">Opmerkingen</h2>
-        <ul class="nav nav-pills mb-1 mx-3 mt-3" id="pills-tab" role="tablist">
+        <ul class="nav nav-pills mb-2 mx-3 mt-3" id="pills-tab" role="tablist">
             <li v-for="(categorie, index) in categorien" class="nav-item" role="presentation">
                 <button v-if="index === 0" class="nav-link active" :id="'pills-' + categorie + '-tab'" data-bs-toggle="pill" :data-bs-target="'#pills-'+ categorie" type="button" role="tab" :aria-controls="'pills-'+ categorie" aria-selected="true">{{categorie.charAt(0).toUpperCase() + categorie.slice(1)}}</button>
                 <button v-else class="nav-link" :id="'pills-' + categorie + '-tab'" data-bs-toggle="pill" :data-bs-target="'#pills-'+ categorie" type="button" role="tab" :aria-controls="'pills-'+ categorie" aria-selected="true">{{categorie.charAt(0).toUpperCase() + categorie.slice(1)}}</button>
