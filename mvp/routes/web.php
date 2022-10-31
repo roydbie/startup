@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Werkorder;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 
@@ -8,7 +9,7 @@ Route::get('/', function () {
 });
 
 Route::get('/werkorders', function () {
-    return Inertia::render('Werkorders/Alles');
+    return Inertia::render('Werkorders/Alles', ['werkorders' => Werkorder::all()]);
 });
 
 Route::get('/werkorders/{id}', function ($id) {

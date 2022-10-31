@@ -5,7 +5,9 @@
                 <title>Werkorder {{ id }}</title>
             </Head>
 
-            <div class="btn-group mt-3" role="group" style="margin-left: 5%;">
+            <Link href="/werkorders" class="btn btn-primary fnt09 mt-3" style="margin-left: 5%;">Terug</Link>
+
+            <div class="btn-group mt-3" role="group" style="margin-left: 2.5%;">
                 <button @click="currentView = 'factuur'" :class="[currentView === 'factuur' ? activeClass : '']"
                         type="button" class="btn btn-outline-primary fnt09">Factuur</button>
                 <button @click="currentView = 'factuur+factuurregels'" :class="[currentView === 'factuur+factuurregels' ? activeClass : '']"
