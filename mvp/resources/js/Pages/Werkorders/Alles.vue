@@ -10,13 +10,11 @@
                 <thead>
                     <tr>
                         <th scope="col" v-for="(value,key) in werkorders[0]">{{ key }}</th>
-                        <th scope="col">&nbsp;</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr v-for="werkorder in werkorders" v-on:click="naarDetails(werkorder.id)" style="cursor: pointer;">
                         <td v-for="value in werkorder">{{ value }}</td>
-                        <td><Link :href="'/werkorders/' + werkorder.id" ref="myBtn">info</Link></td>
                     </tr>
                 </tbody>
             </table>
