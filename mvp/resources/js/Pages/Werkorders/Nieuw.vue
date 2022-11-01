@@ -23,6 +23,26 @@
                         <option value="Henry d B">Henry d B</option>
                     </select>
                 </div>
+                <div class="mb-3">
+                    <label for="klantInput" class="form-label fnt09">Klant</label>
+                    <input class="form-control fnt09" list="datalistKlanten" id="klantInput" v-model="form.klant">
+                    <datalist id="datalistKlanten">
+                        <option value="BaKu metaalbewerking"></option>
+                        <option value="DB-Sportscars"></option>
+                        <option value="APK Autoservice Brabant"></option>
+                        <option value="Joep van het Hek"></option>
+                        <option value="ABC Media"></option>
+                    </datalist>
+                </div>
+                <div class="mb-3">
+                    <label for="statusInput" class="form-label fnt09">Status</label>
+                    <select class="form-select fnt09" id="statusInput" v-model="form.status">
+                        <option value="1" selected>Aangemeld</option>
+                        <option value="2">Bezig</option>
+                        <option value="3">Afgerond</option>
+                        <option value="4">Verwijderd</option>
+                    </select>
+                </div>
                 <button type="submit" class="btn btn-primary fnt09">Klaar</button>
             </form>
         </Layout>
@@ -42,9 +62,9 @@ export default {
     data() {
         return {
             form: {
-                omschrijving: "Werkorder-test",
-                aangemaakt_door: "Roy de Bie",
-                klant: "Iemand de klant",
+                omschrijving: "",
+                aangemaakt_door: "",
+                klant: "",
                 status: 1,
                 geschatte_tijdsduur: "",
                 planning_datum: "",
