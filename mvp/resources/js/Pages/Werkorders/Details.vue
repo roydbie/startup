@@ -18,6 +18,8 @@
 
             <Link href="/werkorders" class="btn btn-primary fnt09 mt-3" style="margin-left: 2.5%;">Print</Link>
 
+            <h1 class="page-heading">Werkorder {{ werkorder.id }}</h1>
+
 
             <div v-if="currentView === 'factuur'" class="column" style="width:60%;margin-left:20%;margin-right:20%;">
                 <h2 class="mx-5 mt-4">Werkorder {{ werkorder.id }}</h2>
@@ -77,9 +79,6 @@ export default {
 </script>
 
 <style scoped>
-.fnt09 {
-    font-size: 0.9rem!important;
-}
 
 .column {
     display:inline-block;

@@ -16,21 +16,21 @@ class Werkorder extends Model
      *
      * @var string
      */
-    protected string $table = 'werkorders';
+    protected $table = 'werkorders';
 
     /**
      * Indicates if the model should be timestamped.
      *
      * @var bool
      */
-    public bool $timestamps = false;
+    public $timestamps = false;
 
     /**
      * The attributes that are mass assignable.
      *
      * @var array
      */
-    protected array $fillable = [
+    protected $fillable = [
         'omschrijving',
         'aangemaakt_door',
         'klant',
@@ -45,11 +45,6 @@ class Werkorder extends Model
     public static function orderByDesc(string $string): Collection
     {
         return DB::table('werkorders')->orderBy($string, 'desc')->get();
-    }
-
-    public static function orderByDescTwice(string $orderBy1, string $orderBy2): Collection
-    {
-        return DB::table('werkorders')->orderBy($orderBy1, 'desc')->orderBy($orderBy2, 'desc')->get();
     }
 
     public static function find($id)

@@ -4,6 +4,9 @@
             <Head>
                 <title>Werkorders</title>
             </Head>
+
+            <Link href="/werkorders/nieuw" class="btn btn-primary fnt09 mt-3" style="margin-left: 5%;">Nieuw werkorder</Link>
+
             <h1 class="page-heading">Werkorders</h1>
 
             <table class="table hover table-striped">
@@ -37,7 +40,7 @@ export default {
     },
     methods: {
         naarDetails(id) {
-            this.$inertia.visit('werkorders/' + id);
+            this.$inertia.visit('werkorders/details/' + id);
         }
     }
 }

@@ -21,7 +21,7 @@ export default {
 }
 </script>
 
-<style scoped>
+<style>
 
 .header {
     background-color: whitesmoke;
@@ -35,5 +35,9 @@ export default {
     padding: 1rem 0;
     border-bottom: 2px solid #34eb74;
 
+}
+
+.fnt09 {
+    font-size: 0.9rem!important;
 }
 </style>

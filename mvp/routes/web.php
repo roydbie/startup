@@ -1,6 +1,7 @@
 <?php
 
 use App\Models\Werkorder;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 
@@ -9,11 +10,20 @@ Route::get('/', function () {
 });
 
 Route::get('/werkorders', function () {
-    return Inertia::render('Werkorders/Alles', ['werkorders' => Werkorder::orderByDescTwice('aanmaak_datum', 'aanmaak_tijd')->toArray()]);
+    return Inertia::render('Werkorders/Alles', ['werkorders' => Werkorder::orderByDesc('aanmaak_timestamp')]);
 });
 
-Route::get('/werkorders/{id}', function ($id) {
+Route::get('/werkorders/details/{id}', function ($id) {
     return Inertia::render('Werkorders/Details', ['werkorder' => Werkorder::find($id)]);
+});
+
+Route::get('/werkorders/nieuw', function () {
+    return Inertia::render('Werkorders/Nieuw');
+});
+
+Route::post('/werkorders/nieuw', function (Request $request) {
+    Werkorder::create($request->all());
+    return Inertia::render('Werkorders/Alles', ['werkorders' => Werkorder::orderByDesc('aanmaak_timestamp')]);
 });
 
 Route::get('/planning', function () {
