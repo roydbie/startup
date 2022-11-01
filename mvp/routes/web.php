@@ -9,11 +9,11 @@ Route::get('/', function () {
 });
 
 Route::get('/werkorders', function () {
-    return Inertia::render('Werkorders/Alles', ['werkorders' => Werkorder::all()]);
+    return Inertia::render('Werkorders/Alles', ['werkorders' => Werkorder::orderByDescTwice('aanmaak_datum', 'aanmaak_tijd')->toArray()]);
 });
 
 Route::get('/werkorders/{id}', function ($id) {
-    return Inertia::render('Werkorders/Details', ['id' => $id]);
+    return Inertia::render('Werkorders/Details', ['werkorder' => Werkorder::find($id)]);
 });
 
 Route::get('/planning', function () {

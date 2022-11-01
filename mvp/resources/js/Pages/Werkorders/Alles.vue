@@ -37,7 +37,7 @@ export default {
     },
     methods: {
         naarDetails(id) {
-            this.$inertia.get('werkorders/' + id);
+            this.$inertia.visit('werkorders/' + id);
         }
     }
 }

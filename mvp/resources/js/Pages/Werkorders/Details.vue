@@ -2,7 +2,7 @@
     <div>
         <Layout>
             <Head>
-                <title>Werkorder {{ id }}</title>
+                <title>Werkorder {{ werkorder.id }}</title>
             </Head>
 
             <Link href="/werkorders" class="btn btn-primary fnt09 mt-3" style="margin-left: 5%;">Terug</Link>
@@ -16,14 +16,18 @@
                         type="button" class="btn btn-outline-primary fnt09">Opmerkingen</button>
             </div>
 
+            <Link href="/werkorders" class="btn btn-primary fnt09 mt-3" style="margin-left: 2.5%;">Print</Link>
+
 
             <div v-if="currentView === 'factuur'" class="column" style="width:60%;margin-left:20%;margin-right:20%;">
-                <h2 class="mx-5 mt-4">Werkorder {{ id }}</h2>
+                <h2 class="mx-5 mt-4">Werkorder {{ werkorder.id }}</h2>
+                {{ werkorder.omschrijving}}
             </div>
 
             <div v-if="currentView === 'factuur+factuurregels'">
                 <div class="column" style="width:45%;margin-left:5%;margin-right:5%;">
-                    <h2 class="mx-5 mt-4">Werkorder {{ id }}</h2>
+                    <h2 class="mx-5 mt-4">Werkorder {{ werkorder.id }}</h2>
+                    {{ werkorder.omschrijving }}
                 </div>
                 <div class="column" style="width:40%;margin-right:5%;">
                     <h2 class="mx-5 mt-4">Factuurregels</h2>
@@ -32,7 +36,8 @@
 
             <div v-if="currentView === 'factuur+opmerkingen'">
                 <div class="column" style="width:45%;margin-left:5%;margin-right:5%;">
-                    <h2 class="mx-5 mt-4">Werkorder {{ id }}</h2>
+                    <h2 class="mx-5 mt-4">Werkorder {{ werkorder.id }}</h2>
+                    {{ werkorder.omschrijving }}
                 </div>
                 <div class="column" style="width:40%;margin-right:5%;">
                     <Opmerkingen></Opmerkingen>
@@ -66,7 +71,7 @@ export default {
         Opmerkingen
     },
     props: {
-        id: String
+        werkorder: Object
     }
 }
 </script>
