@@ -51,4 +51,21 @@ export default {
     width:90%;
     margin:auto;
 }
+
+table, tr td {
+    border: 1px solid grey;
+}
+tbody {
+    display: block;
+    height: 50vh;
+    overflow: auto;
+}
+thead, tbody tr {
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+}
+thead {
+    width: calc( 100% - 1em )/* scrollbar is average 1em/16px width, remove it from thead width */
+}
 </style>
