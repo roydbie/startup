@@ -9,9 +9,21 @@
 
             <h1 class="page-heading">Nieuw werkorder</h1>
 
-            <form v-on:submit.prevent="submit">
-                <input v-model="form.omschrijving"/>
-                <button type="submit">Klaar</button>
+            <form v-on:submit.prevent="submit" style="width:30%;margin:auto;">
+                <div class="mb-3">
+                    <label for="omschrijvingInput" class="form-label fnt09">Omschrijving</label>
+                    <input type="text" class="form-control fnt09" id="omschrijvingInput" v-model="form.omschrijving">
+                </div>
+                <div class="mb-3">
+                    <label for="aangemaaktDoorInput" class="form-label fnt09">Aangemaakt door</label>
+                    <select class="form-select fnt09" id="aangemaaktDoorInput" v-model="form.aangemaakt_door">
+                        <option value="Roy de Bie" selected>Roy de Bie</option>
+                        <option value="admin">admin</option>
+                        <option value="Iemand anders">Iemand anders</option>
+                        <option value="Henry d B">Henry d B</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn btn-primary fnt09">Klaar</button>
             </form>
         </Layout>
     </div>

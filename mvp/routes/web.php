@@ -23,7 +23,7 @@ Route::get('/werkorders/nieuw', function () {
 
 Route::post('/werkorders/nieuw', function (Request $request) {
     Werkorder::create($request->all());
-    return Inertia::render('Werkorders/Alles', ['werkorders' => Werkorder::orderByDesc('aanmaak_timestamp')]);
+    return redirect('/werkorders');
 });
 
 Route::get('/planning', function () {
