@@ -26,6 +26,11 @@ Route::post('/werkorders/nieuw', function (Request $request) {
     return redirect('/werkorders');
 });
 
+Route::delete('/werkorders/{id}', function ($id) {
+    Werkorder::destroy($id);
+    return redirect('/werkorders');
+});
+
 Route::get('/planning', function () {
     return Inertia::render('Planning');
 });

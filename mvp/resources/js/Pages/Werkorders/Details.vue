@@ -16,7 +16,9 @@
                         type="button" class="btn btn-outline-primary fnt09">Opmerkingen</button>
             </div>
 
-            <Link href="/werkorders" class="btn btn-primary fnt09 mt-3" style="margin-left: 2.5%;">Print</Link>
+            <Link href="/werkorders" class="btn btn-primary fnt09 mt-3" style="margin-left: 1%;">Print werkorder</Link>
+
+            <button v-on:click="verwijder(werkorder.id)" class="btn btn-danger fnt09 mt-3" style="margin-left: 1%;">Verwijder werkorder</button>
 
             <h1 class="page-heading">Werkorder {{ werkorder.id }}</h1>
 
@@ -74,6 +76,14 @@ export default {
     },
     props: {
         werkorder: Object
+    },
+    methods: {
+        verwijder(id) {
+            if(confirm('Weet u zeker dat u werkorder ' + id + ' wilt verwijderen?')){
+                this.$inertia.delete('/werkorders/' + id)
+            }
+
+        },
     }
 }
 </script>

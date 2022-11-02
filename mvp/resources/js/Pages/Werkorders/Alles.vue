@@ -50,6 +50,7 @@ export default {
 .table {
     width:90%;
     margin:auto;
+    font-size:0.9rem!important;
 }
 
 table, tr td {

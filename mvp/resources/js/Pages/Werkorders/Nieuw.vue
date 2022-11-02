@@ -78,10 +78,6 @@ export default {
         submit() {
             this.$inertia.post('/werkorders/nieuw', this.form)
         },
-        formatDate(date) {
-            const options = { year: 'numeric', month: 'long', day: 'numeric' }
-            return new Date(date).toLocaleDateString('en', options)
-        },
     }
 }
 </script>
