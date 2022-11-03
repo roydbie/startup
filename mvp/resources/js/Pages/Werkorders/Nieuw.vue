@@ -37,10 +37,7 @@
                 <div class="mb-3">
                     <label for="statusInput" class="form-label fnt09">Status</label>
                     <select class="form-select fnt09" id="statusInput" v-model="form.status">
-                        <option value="1" selected>Aangemeld</option>
-                        <option value="2">Bezig</option>
-                        <option value="3">Afgerond</option>
-                        <option value="4">Verwijderd</option>
+                        <option v-for="status in werkorder_statussen" :value="status.id" selected>{{ status.status }}</option>
                     </select>
                 </div>
                 <button type="submit" class="btn btn-primary fnt09">Klaar</button>
@@ -52,6 +49,7 @@
 <script>
 import { Link, Head } from '@inertiajs/inertia-vue3'
 import Layout from '../../Layout/Default.vue'
+import axios from "axios";
 
 export default {
     components: {
@@ -72,12 +70,23 @@ export default {
                 deadline_datum: "",
                 deadline_tijd: ""
             },
+            werkorder_statussen: []
         }
     },
     methods: {
         submit() {
             this.$inertia.post('/werkorders/nieuw', this.form)
         },
+    },
+    beforeMount() {
+        axios
+            .get('http://127.0.0.1:8000/api/werkorder_statussen')
+            .then((res) => {
+                this.werkorder_statussen = res.data;
+            })
+            .catch((error) => {
+                console.log(error);
+            });
     }
 }
 </script>

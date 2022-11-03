@@ -11,9 +11,9 @@ InertiaProgress.init()
 
 createInertiaApp({
     resolve: (name) => resolvePageComponent(`./Pages/${name}.vue`, import.meta.glob('./Pages/**/*.vue')),
-    setup({ el, App, props, plugin }) {
+    setup({ el, App, props, plugin, axios }) {
         createApp({ render: () => h(App, props) })
-            .use(plugin)
+            .use(plugin, axios)
             .mount(el)
     },
 })
