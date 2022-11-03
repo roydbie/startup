@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\DB;
 
 class WerkorderStatus extends Model
 {
@@ -34,4 +35,9 @@ class WerkorderStatus extends Model
         'actief',
         'in_visueel',
     ];
+
+    public static function find($id)
+    {
+        return DB::table('werkorder_statussen')->find($id)->status;
+    }
 }

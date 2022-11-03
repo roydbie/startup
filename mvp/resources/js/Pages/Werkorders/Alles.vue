@@ -31,7 +31,7 @@
                         <td >{{ werkorder.omschrijving }}</td>
                         <td >{{ werkorder.aangemaakt_door }}</td>
                         <td >{{ werkorder.klant }}</td>
-                        <td >{{ werkorder_statussen.find(({ id }) => id == werkorder.status).status }}</td>
+                        <td >{{ werkorder.status }}</td>
                         <td >{{ werkorder.geschatte_tijdsduur }}</td>
                         <td >{{ werkorder.planning_datum }}</td>
                         <td >{{ werkorder.planning_tijd }}</td>
@@ -46,7 +46,7 @@
 </template>
 
 <script>
-import { Link, Head } from '@inertiajs/inertia-vue3'
+import {Head, Link} from '@inertiajs/inertia-vue3'
 import Layout from '../../Layout/Default.vue'
 import axios from "axios";
 
@@ -61,7 +61,7 @@ export default {
     },
     data () {
         return {
-            werkorder_statussen: []
+            werkorder_statussen: [],
         }
     },
     methods: {
@@ -69,16 +69,6 @@ export default {
             this.$inertia.visit('werkorders/details/' + id);
         },
     },
-    beforeMount() {
-        axios
-            .get('http://127.0.0.1:8000/api/werkorder_statussen')
-            .then((res) => {
-                this.werkorder_statussen = res.data;
-            })
-            .catch((error) => {
-                console.log(error);
-            });
-    }
 }
 </script>
 

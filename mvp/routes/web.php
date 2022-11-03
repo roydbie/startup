@@ -1,6 +1,7 @@
 <?php
 
 use App\Models\Werkorder;
+use App\Models\WerkorderStatus;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
@@ -11,7 +12,11 @@ Route::get('/', function () {
 
 Route::prefix('werkorders')->group(function () {
     Route::get('/', function () {
-        return Inertia::render('Werkorders/Alles', ['werkorders' => Werkorder::orderByDesc('aanmaak_timestamp')]);
+        $werkorders = Werkorder::orderByDesc('aanmaak_timestamp')->transform(function ($item) {
+            $item->status = WerkorderStatus::find($item->status);
+            return $item;
+        });
+        return Inertia::render('Werkorders/Alles', ['werkorders' => $werkorders]);
     });
 
     Route::get('/details/{id}', function ($id) {
