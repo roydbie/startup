@@ -29,6 +29,6 @@ Route::get('/werkorder_statussen', function () {
 });
 
 Route::get('/werkorder_statussen/{id}', function ($id) {
-    return WerkorderStatus::find($id);
+    return WerkorderStatus::findStatus($id);
 });
 

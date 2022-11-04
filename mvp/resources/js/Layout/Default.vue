@@ -4,6 +4,7 @@
             <Link href="/" class="topnav-link" style="margin-left:3rem!important;">Visuele weergave</Link>
             <Link href="/werkorders" class="topnav-link">Werkorders</Link>
             <Link href="/planning" class="topnav-link">Planning</Link>
+            <Link href="/instellingen" class="topnav-link">Instellingen</Link>
         </header>
         <article>
             <slot />
