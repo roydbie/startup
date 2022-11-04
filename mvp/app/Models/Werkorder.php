@@ -2,35 +2,40 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\DB;
 
 class Werkorder extends Model
 {
-    use HasFactory;
+
+    /**
+     * The primary key associated with the table.
+     *
+     * @var string
+     */
+    protected string $primaryKey = 'id';
 
     /**
      * The table associated with the model.
      *
      * @var string
      */
-    protected $table = 'werkorders';
+    protected string $table = 'werkorders';
 
     /**
      * Indicates if the model should be timestamped.
      *
      * @var bool
      */
-    public $timestamps = false;
+    public bool $timestamps = false;
 
     /**
      * The attributes that are mass assignable.
      *
      * @var array
      */
-    protected $fillable = [
+    protected array $fillable = [
         'omschrijving',
         'aangemaakt_door',
         'klant',

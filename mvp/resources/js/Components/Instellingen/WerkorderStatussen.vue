@@ -76,7 +76,7 @@ export default {
             this.$inertia.post('/werkorder_statussen', this.form)
         },
         actiefUpdaten(id, nieuweActief) {
-            this.$inertia.put(`/werkorder_status/${id}`, {actief: nieuweActief})
+            this.$inertia.put(`/werkorder_statussen/${id}`, {actief: nieuweActief})
         }
     }
 
