@@ -30,5 +30,7 @@ Route::get('/instellingen', function () {
 
 Route::post('/werkorder_statussen', [WerkorderStatusController::class, 'index']);
 Route::put('/werkorder_statussen/{id}', [WerkorderStatusController::class, 'update']);
+Route::delete('/werkorder_statussen/{id}', [WerkorderStatusController::class, 'delete']);
+
 
 

@@ -37,7 +37,7 @@
                 <div class="mb-3">
                     <label for="statusInput" class="form-label fnt09">Status</label>
                     <select class="form-select fnt09" id="statusInput" v-model="form.status">
-                        <option v-for="status in werkorder_statussen" :value="status.id" selected>{{ status.status }}</option>
+                        <option v-for="status in werkorder_statussen" :value="status.id">{{ status.status }}</option>
                     </select>
                 </div>
                 <button type="submit" class="btn btn-primary fnt09">Klaar</button>

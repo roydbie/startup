@@ -20,4 +20,10 @@ class WerkorderStatusController extends Controller
         return redirect('/instellingen');
     }
 
+    public static function delete($id)
+    {
+        WerkorderStatus::destroy($id);
+        return redirect('/instellingen');
+    }
+
 }

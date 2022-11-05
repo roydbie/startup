@@ -82,7 +82,6 @@ export default {
             if(confirm('Weet u zeker dat u werkorder ' + id + ' wilt verwijderen?')){
                 this.$inertia.delete('/werkorders/' + id)
             }
-
         },
     }
 }

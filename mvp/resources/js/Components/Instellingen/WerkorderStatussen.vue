@@ -7,6 +7,7 @@
                 <th scope="col">status</th>
                 <th scope="col">actief</th>
                 <th scope="col">in_visueel</th>
+                <th scope="col"></th>
             </tr>
             </thead>
             <tbody>
@@ -24,6 +25,9 @@
                         <input class="form-check-input" v-if = "status.in_visueel === 1" checked type="checkbox" >
                         <input class="form-check-input" v-else-if = "status.in_visueel === 0"  type="checkbox" >
                     </div>
+                </td>
+                <td>
+                    <button class="btn btn-outline-danger btn-sm fnt09" v-on:click="statusVerwijderen(status.id)">x</button>
                 </td>
             </tr>
             </tbody>
@@ -46,7 +50,7 @@
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary fnt09" data-bs-dismiss="modal">Sluiten</button>
-                        <button type="button" class="btn btn-primary fnt09" v-on:click="statusToevoegenSubmit" data-bs-dismiss="modal">Toevoegen</button>
+                        <button type="button" class="btn btn-primary fnt09" v-on:click="statusToevoegen" data-bs-dismiss="modal">Toevoegen</button>
                     </div>
                 </div>
             </div>
@@ -72,11 +76,16 @@ export default {
         checked(number) {
             return number !== 0;
         },
-        statusToevoegenSubmit() {
-            this.$inertia.post('/werkorder_statussen', this.form)
+        statusToevoegen() {
+            this.$inertia.post('/werkorder_statussen', this.form);
         },
         actiefUpdaten(id, nieuweActief) {
-            this.$inertia.put(`/werkorder_statussen/${id}`, {actief: nieuweActief})
+            this.$inertia.put(`/werkorder_statussen/${id}`, {actief: nieuweActief});
+        },
+        statusVerwijderen(id) {
+            if(confirm('Weet u zeker dat u status ' + id + ' wilt verwijderen?')){
+                this.$inertia.delete(`/werkorder_statussen/${id}`);
+            }
         }
     }
 
