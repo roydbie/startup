@@ -13,7 +13,12 @@ class WerkorderController extends Controller
     public static function index()
     {
         $werkorders = Werkorder::orderByDesc('aanmaak_timestamp')->transform(function ($item) {
-            $item->status = WerkorderStatus::findStatus($item->status);
+            if (WerkorderStatus::find($item->status) === null){
+                $item->status = 'Status verwijderd';
+            } else {
+                $item->status = WerkorderStatus::find($item->status)->status;
+            }
+
             return $item;
         });
         return Inertia::render('Werkorders/Alles', ['werkorders' => $werkorders]);

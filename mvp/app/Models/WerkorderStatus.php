@@ -40,11 +40,6 @@ class WerkorderStatus extends Model
         'in_visueel',
     ];
 
-    public static function findStatus($id)
-    {
-        return DB::table('werkorder_statussen')->find($id)->status;
-    }
-
     public static function find($id)
     {
         return DB::table('werkorder_statussen')->find($id);
