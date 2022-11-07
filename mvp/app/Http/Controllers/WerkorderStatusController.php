@@ -16,13 +16,19 @@ class WerkorderStatusController extends Controller
 
     public static function update($id, Request $request)
     {
-        DB::table('werkorder_statussen')->where('id', '=', $id)->update(['actief' => $request->get('actief')]);
+        DB::table('werkorder_statussen')->where('id', '=', $id)->update(['actief' => $request->get('actief'), 'in_visueel' => $request->get('in_visueel')]);
         return redirect('/instellingen');
     }
 
     public static function delete($id)
     {
-        WerkorderStatus::destroy($id);
+        WerkorderStatus::find($id)->update(['verwijderd' => 1, 'actief' => 0, 'in_visueel' => 0]);
+        return redirect('/instellingen');
+    }
+
+    public static function herstellen($id)
+    {
+        WerkorderStatus::find($id)->update(['verwijderd' => 0]);
         return redirect('/instellingen');
     }
 
