@@ -12,7 +12,7 @@ class WerkorderController extends Controller
 
     public static function index()
     {
-        $werkorders = Werkorder::orderByDesc('aanmaak_timestamp')->transform(function ($item) {
+        $werkorders = Werkorder::orderBy('aanmaak_timestamp', 'desc')->get()->transform(function ($item) {
             if (WerkorderStatus::find($item->status) === null){
                 $item->status = 'Status verwijderd';
             } else {

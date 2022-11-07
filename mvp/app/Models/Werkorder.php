@@ -46,14 +46,4 @@ class Werkorder extends Model
         'deadline_datum',
         'deadline_tijd',
     ];
-
-    public static function orderByDesc(string $string): Collection
-    {
-        return DB::table('werkorders')->orderBy($string, 'desc')->get();
-    }
-
-    public static function find($id)
-    {
-        return DB::table('werkorders')->find($id);
-    }
 }
