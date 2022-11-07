@@ -67,8 +67,6 @@ export default {
         return {
             form: {
                 status: "",
-                actief: 1,
-                in_visueel: 1,
             },
         }
     },

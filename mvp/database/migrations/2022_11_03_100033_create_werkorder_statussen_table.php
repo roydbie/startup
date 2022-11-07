@@ -16,8 +16,9 @@ return new class extends Migration
         Schema::create('werkorder_statussen', function (Blueprint $table) {
             $table->id();
             $table->string('status');
-            $table->integer('actief');
-            $table->integer('in_visueel');
+            $table->integer('actief')->default(1);
+            $table->integer('in_visueel')->default(0);
+            $table->integer('verwijderd')->default(0);
         });
     }
 

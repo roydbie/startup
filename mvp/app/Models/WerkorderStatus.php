@@ -38,6 +38,7 @@ class WerkorderStatus extends Model
         'status',
         'actief',
         'in_visueel',
+        'verwijderd',
     ];
 
 }
