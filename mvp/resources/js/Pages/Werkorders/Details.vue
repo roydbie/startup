@@ -22,7 +22,53 @@
 
             <div v-if="currentView === 'factuur'" class="column" style="width:60%;margin-left:20%;margin-right:20%;">
                 <h2 class="mx-5 mt-4">Werkorder {{ werkorder.id }}</h2>
-                {{ werkorder.omschrijving}}
+                <table class="table" style="width:60%;margin-left:10%;">
+                    <tbody>
+                    <tr>
+                        <th scope="row">Omschrijving</th>
+                        <td colspan="2">{{werkorder.omschrijving}}</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Aangemaakt door</th>
+                        <td colspan="2">{{ werkorder.aangemaakt_door }}</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Klant</th>
+                        <td colspan="2">{{ werkorder.klant }}</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Status</th>
+                        <td colspan="2">{{ werkorder.status }}</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Geschatte tijdsduur</th>
+                        <td colspan="2">{{ werkorder.geschatte_tijdsduur }}</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Plandatum</th>
+                        <td colspan="2">{{ werkorder.planning_datum }}</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Plantijd</th>
+                        <td colspan="2">{{ werkorder.planning_tijd }}</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Deadline datum</th>
+                        <td colspan="2">{{ werkorder.deadline_datum }}</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Deadline tijd</th>
+                        <td colspan="2">{{ werkorder.deadline_tijd }}</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Aangemaakt op</th>
+                        <td colspan="2">
+                            {{ new Date(werkorder.aanmaak_timestamp).getDate() + "-" + new Date(werkorder.aanmaak_timestamp).getMonth() + "-" + new Date(werkorder.aanmaak_timestamp).getFullYear()}}
+                            {{ " om " + new Date(werkorder.aanmaak_timestamp).getHours() + ":" + new Date(werkorder.aanmaak_timestamp).getMinutes() }}
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
             </div>
 
             <div v-if="currentView === 'factuur+factuurregels'">

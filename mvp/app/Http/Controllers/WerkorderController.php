@@ -13,12 +13,7 @@ class WerkorderController extends Controller
     public static function index()
     {
         $werkorders = Werkorder::orderBy('aanmaak_timestamp', 'desc')->get()->transform(function ($item) {
-            if (WerkorderStatus::find($item->status) === null){
-                $item->status = 'Status verwijderd';
-            } else {
-                $item->status = WerkorderStatus::find($item->status)->status;
-            }
-
+            $item->status = WerkorderStatus::find($item->status)->status;
             return $item;
         });
         return Inertia::render('Werkorders/Alles', ['werkorders' => $werkorders]);
@@ -26,7 +21,9 @@ class WerkorderController extends Controller
 
     public static function details($id)
     {
-        return Inertia::render('Werkorders/Details', ['werkorder' => Werkorder::find($id)]);
+        $werkorder = Werkorder::find($id);
+        $werkorder->status = WerkorderStatus::find($werkorder->status)->status;
+        return Inertia::render('Werkorders/Details', ['werkorder' => $werkorder]);
     }
 
     public static function createPage()
