@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Werkorder;
 use App\Models\WerkorderStatus;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Inertia\Inertia;
 
 class WerkorderController extends Controller
@@ -35,6 +36,18 @@ class WerkorderController extends Controller
     {
         Werkorder::create($request->all());
         return redirect('/werkorders');
+    }
+
+    public static function update($id, Request $request)
+    {
+        Werkorder::find($id)->update([
+            'geschatte_tijdsduur' => $request->get('geschatte_tijdsduur'),
+            'planning_datum' => $request->get('planning_datum'),
+            'planning_tijd' => $request->get('planning_tijd'),
+            'deadline_datum' => $request->get('deadline_datum'),
+            'deadline_tijd' => $request->get('deadline_tijd'),
+        ]);
+        return redirect("werkorders/details/{$id}");
     }
 
     public static function delete($id)

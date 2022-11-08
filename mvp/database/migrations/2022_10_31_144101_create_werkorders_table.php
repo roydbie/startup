@@ -20,11 +20,11 @@ return new class extends Migration
             $table->string('aangemaakt_door');
             $table->string('klant');
             $table->string('status');
-            $table->time('geschatte_tijdsduur')->nullable();
+            $table->time('geschatte_tijdsduur')->default('00:00:00');
             $table->date('planning_datum')->nullable();
-            $table->time('planning_tijd')->nullable();
+            $table->time('planning_tijd')->default('00:00:00');
             $table->date('deadline_datum')->nullable();
-            $table->time('deadline_tijd')->nullable();
+            $table->time('deadline_tijd')->default('00:00:00');
             $table->timestamp('aanmaak_timestamp')->useCurrent();
         });
     }

@@ -64,11 +64,6 @@ export default {
                 aangemaakt_door: "",
                 klant: "",
                 status: 1,
-                geschatte_tijdsduur: "",
-                planning_datum: "",
-                planning_tijd: "",
-                deadline_datum: "",
-                deadline_tijd: ""
             },
             werkorder_statussen: []
         }

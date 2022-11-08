@@ -16,6 +16,7 @@ Route::prefix('werkorders')->group(function () {
     Route::get('/', [WerkorderController::class, 'index']);
     Route::get('/details/{id}', [WerkorderController::class, 'details']);
     Route::get('/nieuw', [WerkorderController::class, 'createPage']);
+    Route::put('/{id}', [WerkorderController::class, 'update']);
     Route::post('/nieuw', [WerkorderController::class, 'create']);
     Route::delete('/{id}', [WerkorderController::class, 'delete']);
 });
