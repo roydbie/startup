@@ -20,9 +20,6 @@
 
             <button v-on:click="verwijder(werkorder.id)" class="btn btn-danger fnt09 mt-3" style="margin-left: 1%;">Verwijder werkorder</button>
 
-            <h1 class="page-heading">Werkorder {{ werkorder.id }}</h1>
-
-
             <div v-if="currentView === 'factuur'" class="column" style="width:60%;margin-left:20%;margin-right:20%;">
                 <h2 class="mx-5 mt-4">Werkorder {{ werkorder.id }}</h2>
                 {{ werkorder.omschrijving}}
@@ -91,7 +88,7 @@ export default {
 
 .column {
     display:inline-block;
-    margin-top: 1rem;
+    margin-top: 2rem;
     background-color: #f2f2f2;
     border-radius: 0.5rem;
     vertical-align: top;
