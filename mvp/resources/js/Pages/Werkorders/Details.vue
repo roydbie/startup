@@ -79,7 +79,7 @@
                     <tr>
                         <th scope="row">Geschatte tijdsduur</th>
                         <td colspan="2">
-                            <input type="time" class="form-control fnt09" v-model="werkorder.geschatte_tijdsduur" v-on:change="updateForm.toonOKbuttonGeschatteTijdsduur = true">
+                            <input type="time" class="form-control fnt09" v-model="werkorder.geschatte_tijdsduur" v-on:click="updateForm.toonOKbuttonGeschatteTijdsduur = true">
                         </td>
                         <td>
                             <button class="btn btn-success btn-sm" v-if="updateForm.toonOKbuttonGeschatteTijdsduur === true" v-on:click="updateWerkorder">
@@ -92,7 +92,7 @@
                     <tr>
                         <th scope="row">Plandatum</th>
                         <td colspan="2">
-                            <input type="date" class="form-control fnt09" v-model="werkorder.planning_datum" v-on:change="updateForm.toonOKbuttonPlanningDatum = true">
+                            <input type="date" class="form-control fnt09" v-model="werkorder.planning_datum" v-on:click="updateForm.toonOKbuttonPlanningDatum = true">
                         </td>
                         <td>
                             <button class="btn btn-success btn-sm" v-if="updateForm.toonOKbuttonPlanningDatum === true" v-on:click="updateWerkorder">
@@ -105,7 +105,7 @@
                     <tr>
                         <th scope="row">Plantijd</th>
                         <td colspan="2">
-                            <input type="time" class="form-control fnt09" v-model="werkorder.planning_tijd" v-on:change="updateForm.toonOKbuttonPlanningTijd = true">
+                            <input type="time" class="form-control fnt09" v-model="werkorder.planning_tijd" v-on:click="updateForm.toonOKbuttonPlanningTijd = true">
                         </td>
                         <td>
                             <button class="btn btn-success btn-sm" v-if="updateForm.toonOKbuttonPlanningTijd === true" v-on:click="updateWerkorder">
@@ -118,7 +118,7 @@
                     <tr>
                         <th scope="row">Deadline datum</th>
                         <td colspan="2">
-                            <input type="date" class="form-control fnt09" v-model="werkorder.deadline_datum" v-on:change="updateForm.toonOKbuttonDeadlineDatum = true">
+                            <input type="date" class="form-control fnt09" v-model="werkorder.deadline_datum" v-on:click="updateForm.toonOKbuttonDeadlineDatum = true">
                         </td>
                         <td>
                             <button class="btn btn-success btn-sm" v-if="updateForm.toonOKbuttonDeadlineDatum === true" v-on:click="updateWerkorder">
@@ -131,7 +131,7 @@
                     <tr>
                         <th scope="row">Deadline tijd</th>
                         <td colspan="2">
-                            <input type="time" class="form-control fnt09" v-model="werkorder.deadline_tijd" v-on:change="updateForm.toonOKbuttonDeadlineTijd = true">
+                            <input type="time" class="form-control fnt09" v-model="werkorder.deadline_tijd" v-on:click="updateForm.toonOKbuttonDeadlineTijd = true">
                         </td>
                         <td>
                             <button class="btn btn-success btn-sm" v-if="updateForm.toonOKbuttonDeadlineTijd === true" v-on:click="updateWerkorder">
